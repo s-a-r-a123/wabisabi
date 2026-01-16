@@ -1,0 +1,41 @@
+/* ===== GLOBAL RESET ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ===== BASE DOCUMENT ===== */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont;
+}
+
+/* ===== THEME TOKENS (DEFAULT = DARK) ===== */
+:root {
+  --bg: #020617;
+  --surface: #0b0f14;
+  --text: #ffffff;
+  --muted: #9ca3af;
+  --accent: #00e2ad;
+  --border: #1f2933;
+}
+
+/* ===== LIGHT THEME ===== */
+[data-theme="light"] {
+  --bg: #f9fafb;
+  --surface: #ffffff;
+  --text: #020617;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+}
+
+/* ===== APP ROOT ===== */
+#app {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+}
