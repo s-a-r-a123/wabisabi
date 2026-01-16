@@ -1,0 +1,31 @@
+export function getAuthErrorMessage(error) {
+  if (!error?.code) {
+    return "Something went wrong. Please try again."
+  }
+
+  switch (error.code) {
+    case "auth/email-already-in-use":
+      return "Email already in use"
+
+    case "auth/invalid-email":
+      return "Invalid email address"
+
+    case "auth/weak-password":
+      return "Password must be at least 6 characters"
+
+    case "auth/user-not-found":
+      return "No account found with this email"
+
+    case "auth/wrong-password":
+      return "Incorrect password"
+
+    case "auth/too-many-requests":
+      return "Too many attempts. Please try again later"
+
+    case "auth/network-request-failed":
+      return "Network error. Check your connection"
+
+    default:
+      return "Authentication failed. Please try again."
+  }
+}

@@ -59,7 +59,7 @@ const submit = async () => {
     error.value =
       err.code === "auth/invalid-credential"
         ? "Invalid email or password."
-        : err.message
+        : getAuthErrorMessage(err)
   } finally {
     loading.value = false
   }
